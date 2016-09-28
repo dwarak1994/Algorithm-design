@@ -34,6 +34,7 @@ public class HeapSort {
             A[largest]=A[i];
             A[i]=temp;
             Heapify(A,largest);
+            printArray(A);
         }
         
     }
@@ -46,6 +47,7 @@ public class HeapSort {
         int index=(int)(Math.ceil(n/2)-1);
         for(int i=(n/2);i>=0;i--){
             Heapify(A,i);
+            
         }
         return A;
     }
@@ -54,6 +56,8 @@ public class HeapSort {
     public int[] sort(int []A){
         int []finalArray=new int[A.length];
         int []temp_A=BuildHeap(A);
+        System.out.println("-------temp array");
+        printArray(temp_A);
         for(int i=0;i<=A.length-1;i++){
             finalArray[i]=temp_A[0];
             temp_A=splitArray(temp_A);
